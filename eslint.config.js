@@ -25,6 +25,16 @@ module.exports = [
     },
   },
   {
+    files: ["playwright.config.js"],
+    languageOptions: {
+      ecmaVersion: 2020,
+      sourceType: "module",
+      globals: {
+        ...globals.node,
+      },
+    },
+  },
+  {
     files: ["app.js"],
     languageOptions: {
       ecmaVersion: 2018,
@@ -43,6 +53,16 @@ module.exports = [
       "object-curly-spacing": ["error", "always"],
       "arrow-spacing": ["error", { before: true, after: true }],
       "no-console": 0,
+    },
+  },
+  {
+    files: ["e2e-tests/**/*.{js,jsx}"],
+    languageOptions: {
+      ecmaVersion: 2018,
+      sourceType: "commonjs",
+      globals: {
+        ...globals.node,
+      },
     },
   },
   {
