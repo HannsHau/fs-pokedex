@@ -24,6 +24,6 @@ jobs:
         run: echo "$COMMIT_MESSAGES"
       - name: if condition
         env:
-          COMMIT_MESSAGES: ${{ join(github.event.commits.*.message) }}
+          COMMIT_MESSAGES: ${{ join(github.event.commits.*.message, ';') }}
           SKIP: "#skip"
         run: echo "$COMMIT_MESSAGES $SKIP"
