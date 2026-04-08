@@ -26,10 +26,13 @@ jobs:
         env:
           COMMIT_MESSAGES: ${{ join(github.event.commits.*.message, ';') }}
           SKIP: "#skip"
+          TRUE: ${{ true }}
+        if: ${{ TRUE }}
         run: 
-          echo "$COMMIT_MESSAGES; 
-          echo "new line $SKIP"
-          echo "end"
+          echo "$COMMIT_MESSAGES"; 
+          echo "new line $SKIP";
+          echo "end";
+
 
 
 
