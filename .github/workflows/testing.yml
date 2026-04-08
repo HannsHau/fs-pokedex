@@ -27,7 +27,7 @@ jobs:
         run: 
           echo "$COMMIT_MESSAGES"; 
           echo "new line $SKIP";
-          echo "end";
+          echo "end ";
       - name: oposite
         if: true != false
         run: 
