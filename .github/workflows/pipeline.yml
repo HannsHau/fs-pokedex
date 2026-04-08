@@ -50,7 +50,7 @@ jobs:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
   notify_failure:
     needs: [deploy]
-    if: ${{ allways() && needs.deploy.result == 'failure' }}
+    if: ${{ always() && needs.deploy.result == 'failure' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6 
