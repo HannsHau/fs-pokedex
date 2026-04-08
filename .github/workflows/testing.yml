@@ -8,8 +8,6 @@ on:
 jobs:
   a_test_job:
     runs-on: ubuntu-latest
-    env: 
-      TRUE: false
     steps:
       - uses: actions/checkout@v4
       - name: github context
@@ -28,13 +26,13 @@ jobs:
         env:
           COMMIT_MESSAGES: ${{ join(github.event.commits.*.message, ';') }}
           SKIP: "#skip"
-        if: TRUE
+        if: true
         run: 
           echo "$COMMIT_MESSAGES"; 
           echo "new line $SKIP";
           echo "end";
       - name: oposite
-        if: !TRUE
+        if: !true
         run: 
           echo "TRUE is false, Happy Ding Dong!!!!"
 
