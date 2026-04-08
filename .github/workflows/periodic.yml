@@ -14,4 +14,4 @@ jobs:
         uses: jtalk/url-health-check-action@v5
         with:
           # Check the following URLs one by one sequentially
-          url: https://fs-pokedex-autumn-sea-9744.fly.de/
+          url: https://fs-pokedex-autumn-sea-9744.fly.dev/
