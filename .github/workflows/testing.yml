@@ -23,10 +23,7 @@ jobs:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
         run: echo "$COMMIT_MESSAGES"
       - name: if condition
-        env:
-          COMMIT_MESSAGES: ${{ join(github.event.commits.*.message, ';') }}
-          SKIP: '#skip'
-        if: ${{ contains('skip fd dff', 'skip') }}
+        if: ${{ contains(join(github.event.commits.*.message, ';'), '#skip') }}
         run: 
           echo "$COMMIT_MESSAGES"; 
           echo "new line $SKIP";
