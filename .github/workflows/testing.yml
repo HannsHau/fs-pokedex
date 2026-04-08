@@ -32,7 +32,7 @@ jobs:
           echo "new line $SKIP";
           echo "end";
       - name: oposite
-        if: !true
+        if: true != false
         run: 
           echo "TRUE is false, Happy Ding Dong!!!!"
 
