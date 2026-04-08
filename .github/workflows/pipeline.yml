@@ -50,6 +50,7 @@ jobs:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
   notify_failure:
     needs: [deploy]
+    if: needs.deploy.result == 'failure'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6 
@@ -61,6 +62,7 @@ jobs:
           content: "❌ Failure"
   notify_success:
     needs: [deploy]
+    if: needs.deploy.result == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6 
@@ -74,6 +76,7 @@ jobs:
           nodetail: true
   tag_release:
     needs: [deploy]
+    if: needs.deploy.result == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6 
