@@ -28,7 +28,11 @@ jobs:
         run: npx playwright test
       - name: Run npm build
         run: npm run build
-      - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy --remote-only
+      - name: use superfly
+        if: ${{ github.event_name == 'push' }}
+        uses: superfly/flyctl-actions/setup-flyctl@master
+      - name: flyctl deploy --remote-only
+        if: ${{ github.event_name == 'push' }}
+        run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}

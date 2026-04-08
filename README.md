@@ -14,3 +14,6 @@ Start by running `npm install` inside the project folder
 
 ## Productive App
 https://fs-pokedex-autumn-sea-9744.fly.dev/
+
+## Version for testing
+https://fs-pokedex-autumn-sea-9744.fly.dev/version
