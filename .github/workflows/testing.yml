@@ -29,8 +29,7 @@ jobs:
         run: 
           echo "$COMMIT_MESSAGES; 
           echo "new line $SKIP"
-          echo "contains skip ${ contains(COMMIT_MESSAGES, SKIP) }"
           echo "end"
 
-          
+
 
