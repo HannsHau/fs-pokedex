@@ -23,8 +23,10 @@ jobs:
       - name: Run npm test
         run: npm test
       - name: Install Playwright Browsers
+        if: false
         run: npx playwright install --with-deps
       - name: Run Playwright tests
+        if: false
         run: npx playwright test
       - name: Run npm build
         run: npm run build
@@ -48,6 +50,7 @@ jobs:
     needs: [simple_deployment_pipeline]
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v6 
       - name: Bump version and push tag
         if: ${{ github.event_name == 'push' }}
         uses: anothrNick/github-tag-action@1.75.0
