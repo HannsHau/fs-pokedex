@@ -34,7 +34,7 @@ jobs:
           echo "new line $SKIP";
           echo "end";
       - name: oposite
-        if: $TRUE != true
+        if: {{ $TRUE != true }}
         run: 
           echo "TRUE is false, Happy Ding Dong!!!!"
 
