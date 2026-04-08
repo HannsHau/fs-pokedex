@@ -30,4 +30,4 @@ jobs:
         run: 
           echo "$COMMIT_MESSAGES $SKIP"; 
           echo "new line"
-          echo "contains skip CONTAINS_SKIP"
+          echo "contains skip $CONTAINS_SKIP"
