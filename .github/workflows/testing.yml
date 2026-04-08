@@ -32,7 +32,8 @@ jobs:
           echo "$COMMIT_MESSAGES"; 
           echo "new line $SKIP";
           echo "end";
-        else:
+      - name: oposite
+        if: !$TRUE
         run: 
           echo "TRUE is false, Happy Ding Dong!!!!"
 
