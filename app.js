@@ -4,14 +4,14 @@ const app = express()
 // get the port from env variable
 const PORT = process.env.PORT || 5001
 
-app.use(express.static('dist'));
+app.use(express.static('dist'))
 
 app.get('/version', (req, res) => {
   res.send('6.1 should not work, really') // change this string to ensure a new version deployed
 })
 
 app.get('/health', (req, res) => {
-  res.send('ok');
+  res.send('ok')
 })
 
 const start = async () => {
