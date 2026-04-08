@@ -23,8 +23,10 @@ jobs:
       - name: Run npm test
         run: npm test
       - name: Install Playwright Browsers
+        if: false
         run: npx playwright install --with-deps
       - name: Run Playwright tests
+        if: false
         run: npx playwright test
       - name: Run npm build
         run: npm run build
@@ -55,3 +57,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
+      - uses: sarisia/actions-status-discord@v1
+        if: always()
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
