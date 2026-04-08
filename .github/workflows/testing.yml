@@ -28,13 +28,13 @@ jobs:
         env:
           COMMIT_MESSAGES: ${{ join(github.event.commits.*.message, ';') }}
           SKIP: "#skip"
-        if: $TRUE
+        if: TRUE
         run: 
           echo "$COMMIT_MESSAGES"; 
           echo "new line $SKIP";
           echo "end";
       - name: oposite
-        if: $TRUE
+        if: !TRUE
         run: 
           echo "TRUE is false, Happy Ding Dong!!!!"
 
