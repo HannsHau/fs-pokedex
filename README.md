@@ -17,3 +17,6 @@ https://fs-pokedex-autumn-sea-9744.fly.dev/
 
 ## Version for testing
 https://fs-pokedex-autumn-sea-9744.fly.dev/version
+
+## Link to separate Repository for Exercise 21
+https://github.com/HannsHau/redux-anecdotes
